@@ -1,26 +1,26 @@
-import "./App.scss";
+/* rafce */
 import React from "react";
-import {BrowserRouter, Routes, Route} from "react-router-dom";
-import AllRoutesProject from "./components/config/routes";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import AllRoutesProject from "./config/routes";
 
-function App() {
+const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        {AllRoutesProject.map((route,index) => (
+        {AllRoutesProject.map((route, index) => (
           <Route
             key={index}
             path={route.path}
             element={
               <route.layout>
-                <route.component/>
+                <route.component />
               </route.layout>
             }
-          ></Route>
+          />
         ))}
       </Routes>
     </BrowserRouter>
   );
-}
+};
 
 export default App;
